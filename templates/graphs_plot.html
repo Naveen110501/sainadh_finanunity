@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Finan-Unity Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+  <!-- add icon link -->
+  <link rel = "icon" href = "https://www.flaticon.com/svg/static/icons/svg/1170/1170667.svg" 
+  type = "image/x-icon"> 
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+  <style>
+body {
+    background: #e8cbc077;
+    background: -webkit-linear-gradient(to right, #e8cbc09f, #636fa42f);
+    background: linear-gradient(to right, #ecc9bc8c, #47569950);
+    min-height: 100vh;
+}
+
+#contains{
+  padding-top: 60px;
+  padding-bottom: 55px;
+  margin-bottom: 25px;
+  background: linear-gradient(45deg, #149dcc, #ff3366);
+}
+h1{
+box-sizing: border-box;
+color: rgb(255, 255, 255);
+font-family: "Rubik", sans-serif;
+font-size: calc(2vw + 2.5vh + 2vmin);
+margin: 0px;
+font-style: normal;
+font-weight: 700;
+line-height: 81.6px;
+overflow-wrap: break-word;
+text-align: center;
+word-break: break-word
+}
+
+p{
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+}
+h4 {
+box-sizing: border-box;
+color: rgb(35, 35, 35);
+font-family: "Rubik", sans-serif;
+font-style: normal;
+font-weight: 400;
+line-height: 41.6px;
+text-align: center;
+}
+h6 {
+box-sizing: border-box;
+color: rgb(35, 35, 35);
+font-family: "Rubik", sans-serif;
+text-align: center;
+}
+.txt{
+  width: 800px;
+  text-align: center;
+}
+
+.card {
+	background: #fff;
+	box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+</style>
+</head>
+<body>
+  
+  <header role="banner" id="contains">
+	<h1>Finan-Unity Visualisation</h1>
+  </header>
+
+  <div class="container-fluid">
+        <div class = "row">
+            
+            <div class="col-sm-4 py-2">
+                <!-- Card 1 -->
+                <div class="card h-100">
+                <!-- Card content -->
+                        <div class="card-header">
+                        <!-- Content -->
+                            <!-- Title -->
+                            <h4 class="card-title mb-2 font-weight-bold">2020-Covid-Infection-Data</h4>
+                            <!-- Subtitle -->
+                            <h6 class="card-subtitle mb-2 text-muted">Monthly and Daily basis</h6>
+                        </div>
+                    <div class="card-body">
+                    <!-- Card image -->
+                    <div class="view overlay">
+                        <div class="chart" id="sungraph">
+                            <script>
+                            var graphs = {{plot1|safe}};
+                            Plotly.plot('sungraph',graphs,{});
+                            </script>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="card-body">
+                    <!-- Card content -->
+                        <p class="card-text">This plot shows <strong>Finan-Unity</strong> variations of <strong>Infection, Deaths, GDP</strong></p>
+                    </div>
+                </div>
+                <!-- Card 1-->
+            </div> 
+            <div class="col-sm-4 py-2">
+              <!-- Card 2 -->
+              <div class="card h-100">
+              <!-- Card content -->
+                      <div class="card-header">
+                      <!-- Content -->
+                          <!-- Title -->
+                          <h4 class="card-title mb-2 font-weight-bold">No of Infections/month</h4>
+                          <!-- Subtitle -->
+                          <h6 class="card-subtitle mb-2 text-muted">July Month Infection Data</h6>
+                      </div>
+                  <div class="card-body">
+                  <!-- Card image -->
+                  <div class="view overlay">
+                      <div class="chart" id="linegraph">
+                          <script>
+                          var graphs = {{plot2|safe}};
+                          Plotly.plot('linegraph',graphs,{});
+                          </script>
+                      </div>
+                  </div>
+                  </div>
+                  <div class="card-body">
+                  <!-- Card content -->
+                      <p class="card-text">This plot shows <strong>Finan-Unity</strong> variations of <strong>Infection, Deaths, GDP</strong></p>
+                  </div>
+              </div>
+              <!-- Card 2-->
+          </div>
+          <div class="col-sm-4 py-2">
+            <!-- Card 3 -->
+            <div class="card h-100">
+            <!-- Card content -->
+                    <div class="card-header">
+                    <!-- Content -->
+                        <!-- Title -->
+                        <h4 class="card-title mb-2 font-weight-bold">Comparison of Infections</h4>
+                        <!-- Subtitle -->
+                        <h6 class="card-subtitle mb-2 text-muted">July, Jan, Dec months data</h6>
+                    </div>
+                <div class="card-body">
+                <!-- Card image -->
+                <div class="view overlay">
+                    <div class="chart" id="lineargraph">
+                        <script>
+                        var graphs = {{plot3|safe}};
+                        Plotly.plot('lineargraph',graphs,{});
+                        </script>
+                    </div>
+                </div>
+                </div>
+                <div class="card-body">
+                <!-- Card content -->
+                    <p class="card-text">This plot shows <strong>Finan-Unity</strong> variations of <strong>Infection, Deaths, GDP</strong></p>
+                </div>
+            </div>
+            <!-- Card 3-->
+        </div>
+        <div class="col-sm-4 py-2">
+          <!-- Card 5 -->
+          <div class="card h-100">
+          <!-- Card content -->
+                  <div class="card-header">
+                  <!-- Content -->
+                      <!-- Title -->
+                      <h4 class="card-title mb-2 font-weight-bold">Deaths Data</h4>
+                      <!-- Subtitle -->
+                      <h6 class="card-subtitle mb-2 text-muted">July month Daily Deaths</h6>
+                  </div>
+              <div class="card-body">
+              <!-- Card image -->
+              <div class="view overlay">
+                  <div class="chart" id="sun2">
+                      <script>
+                      var graphs = {{plot5|safe}};
+                      Plotly.plot('sun2',graphs,{});
+                      </script>
+                  </div>
+              </div>
+              </div>
+              <div class="card-body">
+              <!-- Card content -->
+                  <p class="card-text">This plot shows <strong>Finan-Unity</strong> variations of <strong>Infection, Deaths, GDP</strong></p>
+              </div>
+          </div>
+          <!-- Card 5-->
+      </div>
+        <div class="col-sm-4 py-2">
+          <!-- Card 4 -->
+          <div class="card h-100">
+          <!-- Card content -->
+                  <div class="card-header">
+                  <!-- Content -->
+                      <!-- Title -->
+                      <h4 class="card-title mb-2 font-weight-bold">2021 Data</h4>
+                      <!-- Subtitle -->
+                      <h6 class="card-subtitle mb-2 text-muted">Monthly and Daily Data</h6>
+                  </div>
+              <div class="card-body">
+              <!-- Card image -->
+              <div class="view overlay">
+                  <div class="chart" id="sun1">
+                      <script>
+                      var graphs = {{plot4|safe}};
+                      Plotly.plot('sun1',graphs,{});
+                      </script>
+                  </div>
+              </div>
+              </div>
+              <div class="card-body">
+              <!-- Card content -->
+                  <p class="card-text">This plot shows <strong>Finan-Unity</strong> variations of <strong>Infection, Deaths, GDP</strong></p>
+              </div>
+          </div>
+          <!-- Card 4-->
+      </div>
+      <div class="col-sm-4 py-2">
+        <!-- Card 6 -->
+        <div class="card h-100">
+        <!-- Card content -->
+                <div class="card-header">
+                <!-- Content -->
+                    <!-- Title -->
+                    <h4 class="card-title mb-2 font-weight-bold">Comparison of Deaths</h4>
+                    <!-- Subtitle -->
+                    <h6 class="card-subtitle mb-2 text-muted">July, Jan, Dec Report</h6>
+                </div>
+            <div class="card-body">
+            <!-- Card image -->
+            <div class="view overlay">
+                <div class="chart" id="line2">
+                    <script>
+                    var graphs = {{plot6|safe}};
+                    Plotly.plot('line2',graphs,{});
+                    </script>
+                </div>
+            </div>
+            </div>
+            <div class="card-body">
+            <!-- Card content -->
+                <p class="card-text">This plot shows <strong>Finan-Unity</strong> variations of <strong>Infection, Deaths, GDP</strong></p>
+            </div>
+        </div>
+        <!-- Card 6-->
+    </div>
+      </div>
+      
+        </div>
+        
+        <!--Grid row-->
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+    <!-- Copyright -->
+    <div class="footer-copyright font-weight-bold  text-center py-3">© 2020 Copyright:
+      <a href="#"> CIP-FinanUnity</a>
+    </div>
+    <!-- Copyright -->  
+</footer>
+<!-- Footer -->
+
+</body>
+</html>
